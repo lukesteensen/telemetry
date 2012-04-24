@@ -12,28 +12,28 @@ var parseTemp = function(str) {
 // sensors
 var sensors = [
     {
-        label:  "ObjectA temp:  ",
+        name: 'front-driver-tire-temp',
         // cmd:    "i2cget -y 3 0x5a 0x07 w",
         cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
-        label:  "AmbientA temp: ",
+        name: 'front-driver-ambient-temp',
         // cmd:    "i2cget -y 3 0x5a 0x06 w",
         cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
-        label:  "ObjectB temp:  ",
+        name: 'front-passenger-tire-temp',
         // cmd:    "i2cget -y 3 0x5b 0x07 w",
         cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
-        label:  "AmbientB temp: ",
+        name: 'front-passenger-ambient-temp',
         // cmd:    "i2cget -y 3 0x5b 0x06 w",
         cmd:    'echo $RANDOM',
         parser: parseTemp,
@@ -70,13 +70,13 @@ var client = bayeux.getClient();
   var get_data = function() {
     exec(sensors[i].cmd, function(error, stdout, stderr) {
       client.publish('/data', {
+        name: sensors[i].name,
         value: sensors[i].parser(stdout),
-        time: Date.now(),
-        label: sensors[i].label,
-        units: sensors[i].units
+        units: sensors[i].units,
+        time: Date.now()
       });
       i = (i + 1) % sensors.length;
-      setTimeout(get_data, 500);
+      setTimeout(get_data, 200);
     });
   };
   get_data();
