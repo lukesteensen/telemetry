@@ -1,7 +1,8 @@
 // requires
+// require.paths.unshift('./node_modules');
 var http = require('http'),
     exec = require('child_process').exec,
-    faye = require('./js/libs/faye-0.8.2/node/faye-node.js');
+    faye = require('faye');
 
 // parsers
 var parseTemp = function(str) {
