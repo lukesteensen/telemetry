@@ -45,12 +45,42 @@ var sensors = [
 // static file server to serve the /public folder
 var fileServer = new stat.Server('./public');
 
+// pubsub server to push out live data updates
+var bayeux = new faye.NodeAdapter({mount: '/faye', timeout: 45});
+
 // the main server
-require('http').createServer(function (request, response) {
+var server = http.createServer(function (request, response) {
   request.addListener('end', function () {
     fileServer.serve(request, response);
   });
-}).listen(8080);
+});
+
+bayeux.attach(server);
+server.listen(8080);
+
+console.log('Server running on port 8080');
+
+// get faye client to pubish messages to browser
+var client = bayeux.getClient();
+
+// loop forever over the sensors array, waiting between each iteration to avoid
+// clogging the i2c bus and getting junk data
+(function() {
+  var i = 0;
+  var get_data = function() {
+    exec(sensors[i].cmd, function(error, stdout, stderr) {
+      client.publish('/data', {
+        value: sensors[i].parser(stdout),
+        time: Date.now(),
+        label: sensors[i].label,
+        units: sensors[i].units
+      });
+      i = (i + 1) % sensors.length;
+      setTimeout(get_data, 500);
+    });
+  };
+  get_data();
+})();
 
 // old server code
 // http.createServer(function (req, res) {
@@ -68,4 +98,3 @@ require('http').createServer(function (request, response) {
     // });
 // }).listen(1337, '');
 
-console.log('Server running on port 8080');

@@ -2,6 +2,12 @@
 
 */
 
+var client = new Faye.Client('/faye');
+
+var data_sub = client.subscribe('/data', function(message) {
+  console.log(message);
+});
+
 $(function() {
 
   var random0 = new TimeSeries();
