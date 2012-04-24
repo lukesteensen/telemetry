@@ -7,57 +7,57 @@ var parseTemp = function(str) {
 this.sensors = [
     {
         name: 'front-driver-tire-temp',
-        // cmd:    "i2cget -y 3 0x5a 0x07 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5a 0x07 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
         name: 'front-driver-ambient-temp',
-        // cmd:    "i2cget -y 3 0x5a 0x06 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5a 0x06 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
         name: 'front-passenger-tire-temp',
-        // cmd:    "i2cget -y 3 0x5b 0x07 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5b 0x07 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
         name: 'front-passenger-ambient-temp',
-        // cmd:    "i2cget -y 3 0x5b 0x06 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5b 0x06 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
         name: 'rear-driver-tire-temp',
-        // cmd:    "i2cget -y 3 0x5a 0x07 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5c 0x07 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
         name: 'rear-driver-ambient-temp',
-        // cmd:    "i2cget -y 3 0x5a 0x06 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5c 0x06 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
         name: 'rear-passenger-tire-temp',
-        // cmd:    "i2cget -y 3 0x5b 0x07 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5d 0x07 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     },
     {
         name: 'rear-passenger-ambient-temp',
-        // cmd:    "i2cget -y 3 0x5b 0x06 w",
-        cmd:    'echo $RANDOM',
+        cmd:    "i2cget -y 3 0x5d 0x06 w",
+        // cmd:    'echo $RANDOM',
         parser: parseTemp,
         units:  " degrees F"
     }
