@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Telemetry</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">VU Motorsports Telemetry</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="#tires">Tires</a></li>
+              <!-- <li class="active"><a href="#tires">Tires</a></li> -->
+              <!-- <li><a href="#about">About</a></li> -->
+              <!-- <li><a href="#contact">Contact</a></li> -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Example row of columns -->
+      <a name="tires"></a>
+      <h1>Tire Temperatures</h1>
+      <div class="row">
+        <div class="span6">
+          <h2>Front Driver</h2>
+          <p><span class="label label-important">Tire: <span id="front-driver-tire-temp" ></span></span> <span class="label label-info">Ambient: <span id="front-driver-ambient-temp" ></span></span></p>
+          <canvas id="front-driver-tire-temp-chart" width="500" height="150" /><br />
+        </div>
+        <div class="span6">
+          <h2>Front Passenger</h2>
+          <p><span class="label label-important">Tire: <span id="front-passenger-tire-temp" ></span></span> <span class="label label-info">Ambient: <span id="front-passenger-ambient-temp" ></span></span></p>
+          <canvas id="front-passenger-tire-temp-chart" width="500" height="150" /><br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <h2>Rear Driver</h2>
+          <p><span class="label label-important">Tire: <span id="rear-driver-tire-temp" ></span></span> <span class="label label-info">Ambient: <span id="rear-driver-ambient-temp" ></span></span></p>
+          <canvas id="rear-driver-tire-temp-chart" width="500" height="150" /><br />
+        </div>
+        <div class="span6">
+          <h2>Rear Passenger</h2>
+          <p><span class="label label-important">Tire: <span id="rear-passenger-tire-temp" ></span></span> <span class="label label-info">Ambient: <span id="rear-passenger-ambient-temp" ></span></span></p>
+          <canvas id="rear-passenger-tire-temp-chart" width="500" height="150" /><br />
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+      <p>&copy; Luke Steensen 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+      <script src="js/libs/bootstrap/bootstrap.min.js"></script>
+
+      <script src="js/libs/smoothie.js"></script>
+
+      <script src="js/script.js"></script>
+    </body>
+  </html>
