@@ -21,7 +21,7 @@ labelled 5V power adapter or from the USB (mini B) port.
 Once the green power LED lights up on the board, you know it is recieving power.
 Soon afterwards, the green user LEDs on the opposite side of the Ethernet jack
 should begin blinking, signaling that the board is in the boot process. The
-board should be booted within about one minute, so give it some time before
+board should boot within about one minute, so give it some time before
 proceeding to the next step. 
 
 From time to time, the board will show that it has power, but not boot correctly
@@ -32,7 +32,7 @@ After booting successfully, the next step is to access the device via a terminal
 (Terminal.app on OS X, for example). The router is configured to create
 a wireless network with the SSID "telemetry" and give the BeagleBone the static
 IP address of 192.168.1.101 on that network. Therefore, from a computer
-connected to that wireless network, running the following command:
+connected to that wireless network, running the following terminal command:
 
     ssh root@192.168.1.101
 
@@ -48,7 +48,7 @@ telemetry server:
 
 Once the server is running, the telemetry dashboard should be accessible to any
 computer connected to the telemetry wireless network by typing
-"192.168.1.101:8080" into a web browser's address bar.
+"[192.168.1.101:8080](192.168.1.101:8080)" into a web browser's address bar.
 
 *Please note that an up-to-date version of Google Chrome is the recommended
 browser to make sure that the page displays correctly.*
