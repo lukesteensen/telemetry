@@ -48,7 +48,7 @@ telemetry server:
 
 Once the server is running, the telemetry dashboard should be accessible to any
 computer connected to the telemetry wireless network by typing
-"[192.168.1.101:8080](2)" into a web browser's address bar.
+"[192.168.1.101:8080][2]" into a web browser's address bar.
 
 *Please note that an up-to-date version of Google Chrome is the recommended
 browser to make sure that the page displays correctly.*
