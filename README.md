@@ -59,8 +59,17 @@ browser to make sure that the page displays correctly.*
 
 ![Schematic][4]
 
+Above is an abbreviated version of the current schematic. The wires at the
+bottom continue to the other two attached temperature sensors and make up the
+entirety of the I2C bus and power connections for the sensors. 
+
+The connection to the BeagleBone is as shown below, with the yellow wire being
+SCL and the green wire SDA:
+
+![BeagleBone connection][5]
+
 [1]: http://beagleboard.org/bone
 [2]: http://192.168.1.101:8080
 [3]: http://i.imgur.com/yOSW3.pngWiTOe
 [4]: http://i.imgur.com/WiTOe.png
-
+[5]: http://i.imgur.com/YLtiS.png
