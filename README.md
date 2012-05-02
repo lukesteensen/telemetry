@@ -112,6 +112,27 @@ data to the relevant graphs in realtime, without any need to refresh in the
 browser. The graphs are made with help from the [Smoothie.js][12] charting
 library. 
 
+## Adding sensors
+
+Available sensors are defined in the sensors.js file. Each one has a name,
+system command that returns the desired value, parser that parses the output of
+the system command into the desired value, and a units suffix. 
+
+The fact that the value comes from a system command means that sensors are very
+loosely coupled from the server, so separate programs can be written and called
+that gather the data, without ever adding anything to the server. 
+
+All that needs to be added is the relevant sensor information, the appropriate
+HTML in index.html to provide a cavas for drawing the graph, and the
+declarations of the graph and timeseries in public/js/script.js. The existing
+sensors should provide a very easy-to-follow template for any future sensors. 
+
+## Parts List
+
+* 1 BeagleBone
+* 4 MLX90614 temp sensors
+* 2 4.7K resistors
+
 [1]: http://beagleboard.org/bone
 [2]: http://192.168.1.101:8080
 [3]: http://i.imgur.com/yOSW3.pngWiTOe
