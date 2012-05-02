@@ -40,7 +40,7 @@ var client = bayeux.getClient();
         time: Date.now()
       });
       i = (i + 1) % sensors.length;
-      setTimeout(get_data, 200);
+      setTimeout(get_data, 20);
     });
   };
   get_data();
