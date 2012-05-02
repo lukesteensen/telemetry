@@ -68,8 +68,26 @@ SCL and the green wire SDA:
 
 ![BeagleBone connection][5]
 
+All of the pin definitions can be found in the official [BeagleBone System
+Reference Manual][6].
+
+### Sensors
+
+The attached temperature sensors are [MLX90614][7] digital infrared
+thermometers. Their datasheet can be found [here][8].
+
+They speak I2C natively, so they simply need to be hooked up to 5V, ground, and
+the two bus lines, each of which can be connected directly from the BeagleBone.
+The SDA and SCL lines also require 4.7K pullup resistors, as shown in the
+schematic. 
+
 [1]: http://beagleboard.org/bone
 [2]: http://192.168.1.101:8080
 [3]: http://i.imgur.com/yOSW3.pngWiTOe
 [4]: http://i.imgur.com/WiTOe.png
-[5]: http://i.imgur.com/YLtiS.png
+[5]: http://i.imgur.com/VBeMS.png
+[6]: http://beagleboard.org/static/BONESRM_latest.pdf
+[7]: http://www.melexis.com/Infrared-Thermometer-Sensors/Infrared-Thermometer-Sensors/MLX90614-615.aspx
+[8]: http://www.melexis.com/Asset/IR-sensor-thermometer-MLX90614-Datasheet-DownloadLink-5152.aspx
+
+
