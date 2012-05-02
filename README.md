@@ -79,7 +79,16 @@ thermometers. Their datasheet can be found [here][8].
 They speak I2C natively, so they simply need to be hooked up to 5V, ground, and
 the two bus lines, each of which can be connected directly from the BeagleBone.
 The SDA and SCL lines also require 4.7K pullup resistors, as shown in the
-schematic. 
+schematic. Below is their pinout:
+
+![Temp sensor pinout][9]
+
+One important thing to note is that each of the sensors came form the factory
+with the same I2C slave address, so they had to be manually reprogrammed with
+different addresses. When adding devices to the bus, it is important to check
+their default addresses and make sure there is no current device on the bus with
+that same address. The current sensors are 5a, 5b, 5c, and 5d, but there are
+some system devices sharing the bus as well. 
 
 [1]: http://beagleboard.org/bone
 [2]: http://192.168.1.101:8080
@@ -89,5 +98,6 @@ schematic.
 [6]: http://beagleboard.org/static/BONESRM_latest.pdf
 [7]: http://www.melexis.com/Infrared-Thermometer-Sensors/Infrared-Thermometer-Sensors/MLX90614-615.aspx
 [8]: http://www.melexis.com/Asset/IR-sensor-thermometer-MLX90614-Datasheet-DownloadLink-5152.aspx
+[9]: http://i.imgur.com/7UIGf.png
 
 
