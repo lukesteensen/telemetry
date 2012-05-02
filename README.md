@@ -57,5 +57,5 @@ browser to make sure that the page displays correctly.*
 
 [1]: http://beagleboard.org/bone
 [2]: http://192.168.1.101:8080
-[3]: http://i.imgur.com/jUhEN.png
+[3]: http://i.imgur.com/yOSW3.png
 
