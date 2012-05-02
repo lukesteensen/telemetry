@@ -90,6 +90,28 @@ their default addresses and make sure there is no current device on the bus with
 that same address. The current sensors are 5a, 5b, 5c, and 5d, but there are
 some system devices sharing the bus as well. 
 
+## Software Description
+
+The software running on the BeagleBone consists of an application software with
+two distinct components, a static file server and a WebSocket publish/subscribe
+server. 
+
+The static file server is based off of the [node-static][10] module and handles
+serving all of the files in the public folder, including the HTML, CSS, and
+Javascipt files used to build the dashboard page. 
+
+The publish/subscribe server is based on [Faye][11] and uses WebSockets to allow
+pushing data in realtime to the web page. 
+
+Our application server loops over the array of available sensors (described
+next) at a given frequency, reading their values and publishing the data to over
+the appropriate channel.
+
+The client web page uses Javascript to subscribe to these data updates, adding
+data to the relevant graphs in realtime, without any need to refresh in the
+browser. The graphs are made with help from the [Smoothie.js][12] charting
+library. 
+
 [1]: http://beagleboard.org/bone
 [2]: http://192.168.1.101:8080
 [3]: http://i.imgur.com/yOSW3.pngWiTOe
@@ -99,5 +121,7 @@ some system devices sharing the bus as well.
 [7]: http://www.melexis.com/Infrared-Thermometer-Sensors/Infrared-Thermometer-Sensors/MLX90614-615.aspx
 [8]: http://www.melexis.com/Asset/IR-sensor-thermometer-MLX90614-Datasheet-DownloadLink-5152.aspx
 [9]: http://i.imgur.com/7UIGf.png
-
+[10]: https://github.com/cloudhead/node-static
+[11]: http://faye.jcoglan.com/
+[12]: http://smoothiecharts.org/
 
