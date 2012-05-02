@@ -55,7 +55,12 @@ browser to make sure that the page displays correctly.*
 
 ![Screenshot][3]
 
+## Hardware Description
+
+![Schematic][4]
+
 [1]: http://beagleboard.org/bone
 [2]: http://192.168.1.101:8080
-[3]: http://i.imgur.com/yOSW3.png
+[3]: http://i.imgur.com/yOSW3.pngWiTOe
+[4]: http://i.imgur.com/WiTOe.png
 
